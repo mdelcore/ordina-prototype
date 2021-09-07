@@ -1,0 +1,17 @@
+{
+	"name": "ordina-prototype",
+	"version": "1.0.0",
+	"engines": {
+		"node": ">=10.0 <12.0",
+		"npm": ">=6.0"
+	},
+	"scripts": {
+    "postinstall": "npm run dev:build",
+		"dev:clean": "del-cli '**/static/default/css/**/*.css' --dry-run && del-cli '**/static/default/js/**/*.js' --dry-run",
+		"dev:build": "cd sfra-webpack-builder && npm i && npm run npmInstall && npm run dev && cd ../storefront-reference-architecture && npm run compile:fonts",
+		"dev:compile": "cd sfra-webpack-builder && npm run dev",
+		"prod:build": "cd sfra-webpack-builder && npm i && npm run npmInstall && npm run prod && cd ../storefront-reference-architecture && npm run compile:fonts",
+		"prod:compile": "cd sfra-webpack-builder && npm run prod",
+		"watch": "cd sfra-webpack-builder && npm run watch"
+	}
+}

@@ -1,0 +1,12 @@
+node_modules
+.env
+*.alt
+*.DS_Store
+*dw.json
+*.zip
+.metadata
+.vscode
+
+# Ignore Static Files
+/**/static/**/js
+/**/static/**/css
