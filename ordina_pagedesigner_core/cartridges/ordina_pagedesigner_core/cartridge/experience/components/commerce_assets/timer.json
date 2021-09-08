@@ -6,12 +6,12 @@
     {
       "id": "campaignSettings",
       "name": "Settings",
-      "description": "@TODO: Give this a Proper Description",
+      "description": "Settings to setup a new timer",
       "attribute_definitions": [
         {
           "id": "timerCountdown",
           "name": "Countdown",
-          "description": "What are you counting down?",
+          "description": "Countdown modes (Start, End, Both",
           "type": "enum",
           "values": ["Campaign Start", "Campaign End", "Both"],
           "default_value": "Both",
@@ -30,7 +30,7 @@
     {
       "id": "campaignTimerStartDate",
       "name": "Start Date",
-      "description": "TODO: Fill this out",
+      "description": "Select the month, day, and year to start timer",
       "attribute_definitions": [
         {
           "id": "startDateMonth",
@@ -58,7 +58,7 @@
     {
       "id": "campaignTimerStartTime",
       "name": "Start Time",
-      "description": "TODO: Fill this out",
+      "description": "Select the start time for timer",
       "attribute_definitions": [
         {
           "id": "startDateHour",
@@ -86,7 +86,7 @@
     {
       "id": "campaignTimerEndDate",
       "name": "End Date",
-      "description": "TODO: Fill this out",
+      "description": "Select the month, day, and year to end timer",
       "attribute_definitions": [
         {
           "id": "endDateMonth",
@@ -114,7 +114,7 @@
     {
       "id": "campaignTimerEndTime",
       "name": "End Time",
-      "description": "TODO: Fill this out",
+      "description": "Select the end time for timer",
       "attribute_definitions": [
         {
           "id": "endDateHour",
