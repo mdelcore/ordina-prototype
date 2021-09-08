@@ -1,6 +1,6 @@
 <isscript>
-    var assets = require('*/cartridge/scripts/assets.js');
-    assets.addJs('/js/components/timer.js');
+  var assets = require('*/cartridge/scripts/assets.js');
+  assets.addJs('/js/components/timer.js');
 </isscript>
 
 <iscomment> TODO: Update `pdict` props too all have `campaign` prefix  </iscomment>

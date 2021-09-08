@@ -9,10 +9,26 @@ function updateCounter (start, end, $elm, status) {
   var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
+  var remaining = '';
+
+  if (days > 0) {
+    remaining += days + ' Days ';
+  }
+
+  if (hours > 0) {
+    remaining += hours + ' Hours ';
+  }
+
+  if (minutes > 0) {
+    remaining += minutes + ' Minutes ';
+  }
+
+  if (seconds > 0) {
+    remaining += seconds + ' Seconds';
+  }
+
   // Build Countdown String
-  var text = (diff >= 0)
-    ? days + 'd ' + hours + 'h ' + minutes + 'm ' + seconds + 's '
-    : status;
+  var text = (diff >= 0) ? remaining : status;
 
   // Update DOM Element
   $elm.text(text);
@@ -29,38 +45,36 @@ function updateCounter (start, end, $elm, status) {
  * Initialize Page Designer Component
  */
 $(document).ready(function() {
-  $('.campaign-countdown-timer').each(function(index, element) {
+  // Only initialize countdown timers not already running
+  $('.campaign-countdown-timer:not(.running)').each(function(index, element) {
     var $timer = $(element);
 
-    // Only initialize countdown timers not already reunning
-    if (!$timer.hasClass('running')) {
-      // Build Timestamps
-      var current = new Date($timer.data('campaign-current-time')).getTime();
-      var start = new Date($timer.data('campaign-start')).getTime();
-      var end = new Date($timer.data('campaign-end')).getTime();
+    // Build Timestamps
+    var current = new Date($timer.data('campaign-current-time')).getTime();
+    var start = new Date($timer.data('campaign-start')).getTime();
+    var end = new Date($timer.data('campaign-end')).getTime();
 
-      // Get Component Settings
-      var mode = $timer.data('campaign-mode');
-      var isRunning = $timer.data('campaign-is-running');
-      var hasStarted = $timer.data('campaign-has-started');
-      var hasEnded = $timer.data('campaign-has-ended');
+    // Get Component Settings
+    var mode = $timer.data('campaign-mode');
+    var isRunning = $timer.data('campaign-is-running');
+    var hasStarted = $timer.data('campaign-has-started');
+    var hasEnded = $timer.data('campaign-has-ended');
 
-      // Check which countdown to use
-      if (mode === 'Campaign Start') {
-        updateCounter(current, start, $timer, 'active');
-      } else if (mode === 'Campaign End') {
-        updateCounter(current, end, $timer, 'expired');
-      } else if (!hasStarted) {
-        updateCounter(current, start, $timer, 'active');
-      } else if (hasStarted && isRunning) {
-        updateCounter(current, end, $timer, 'expired');
-      } else if (hasEnded) {
-        // Update DOM Element
-        $timer.text('expired');
-      }
-
-      // Add custom class to track countdowns already running
-      $timer.addClass('running');
+    // Check which countdown to use
+    if (mode === 'Campaign Start') {
+      updateCounter(current, start, $timer, 'active');
+    } else if (mode === 'Campaign End') {
+      updateCounter(current, end, $timer, 'expired');
+    } else if (!hasStarted) {
+      updateCounter(current, start, $timer, 'active');
+    } else if (hasStarted && isRunning) {
+      updateCounter(current, end, $timer, 'expired');
+    } else if (hasEnded) {
+      // Update DOM Element
+      $timer.text('expired');
     }
+
+    // Add custom class to track countdowns already running
+    $timer.addClass('running');
   })
 });
