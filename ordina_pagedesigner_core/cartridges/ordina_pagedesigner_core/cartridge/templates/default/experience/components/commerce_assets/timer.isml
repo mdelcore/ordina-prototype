@@ -1,1 +1,17 @@
-${pdict.myProp}
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addJs('/js/components/timer.js');
+</isscript>
+
+<iscomment> TODO: Update `pdict` props too all have `campaign` prefix  </iscomment>
+<span
+  class="campaign-countdown-timer"
+  data-campaign-start="${pdict.campaignStart}"
+  data-campaign-end="${pdict.campaignEnd}"
+  data-campaign-current-time="${pdict.currentTime}"
+  data-campaign-is-running="${pdict.isRunning}"
+  data-campaign-has-started="${pdict.hasStarted}"
+  data-campaign-has-ended="${pdict.hasEnded}"
+  data-campaign-mode="${pdict.mode}"
+  style="${!empty(pdict.color) ? 'color: ' + pdict.color + ';' : ''}"
+></span>
