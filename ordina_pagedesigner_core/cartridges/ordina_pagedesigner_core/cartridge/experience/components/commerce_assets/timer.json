@@ -1,0 +1,144 @@
+{
+  "name": "Campaign Timer",
+  "description": "Customer can see when a campaign starts",
+  "group": "ordina_assets",
+  "attribute_definition_groups": [
+    {
+      "id": "campaignSettings",
+      "name": "Settings",
+      "description": "@TODO: Give this a Proper Description",
+      "attribute_definitions": [
+        {
+          "id": "timerCountdown",
+          "name": "Countdown",
+          "description": "What are you counting down?",
+          "type": "enum",
+          "values": ["Campaign Start", "Campaign End", "Both"],
+          "default_value": "Both",
+          "required": false
+        },
+        {
+          "id": "timerColor",
+          "name": "Color",
+          "description": "CSS Hex Color for timer",
+          "type": "string",
+          "default_value": "#000000",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "campaignTimerStartDate",
+      "name": "Start Date",
+      "description": "TODO: Fill this out",
+      "attribute_definitions": [
+        {
+          "id": "startDateMonth",
+          "name": "Month",
+          "type": "enum",
+          "values":  ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+          "required": true
+        },
+        {
+          "id": "startDateDay",
+          "name": "Day",
+          "type": "enum",
+          "values":  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],
+          "required": true
+        },
+        {
+          "id": "startDateYear",
+          "name": "Year",
+          "type": "enum",
+          "values":  [2021, 2022, 2023, 2024, 2025],
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "campaignTimerStartTime",
+      "name": "Start Time",
+      "description": "TODO: Fill this out",
+      "attribute_definitions": [
+        {
+          "id": "startDateHour",
+          "name": "Hour",
+          "type": "enum",
+          "values":  ["12", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11"],
+          "required": true
+        },
+        {
+          "id": "startDateMinute",
+          "name": "Minute",
+          "type": "enum",
+          "values":  ["00", "15", "30", "45"],
+          "required": true
+        },
+        {
+          "id": "startDateMeridiem",
+          "name": "AM/PM",
+          "type": "enum",
+          "values": ["AM", "PM"],
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "campaignTimerEndDate",
+      "name": "End Date",
+      "description": "TODO: Fill this out",
+      "attribute_definitions": [
+        {
+          "id": "endDateMonth",
+          "name": "Month",
+          "type": "enum",
+          "values":  ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+          "required": true
+        },
+        {
+          "id": "endDateDay",
+          "name": "Day",
+          "type": "enum",
+          "values":  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],
+          "required": true
+        },
+        {
+          "id": "endDateYear",
+          "name": "Year",
+          "type": "enum",
+          "values":  [2021, 2022, 2023, 2024, 2025],
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "campaignTimerEndTime",
+      "name": "End Time",
+      "description": "TODO: Fill this out",
+      "attribute_definitions": [
+        {
+          "id": "endDateHour",
+          "name": "Hour",
+          "type": "enum",
+          "values":  ["12", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11"],
+          "required": true
+        },
+        {
+          "id": "endDateMinute",
+          "name": "Minute",
+          "type": "enum",
+          "values":  ["00", "15", "30", "45"],
+          "required": true
+        },
+        {
+          "id": "endDateMeridiem",
+          "name": "AM/PM",
+          "type": "enum",
+          "values": ["AM", "PM"],
+          "required": true
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}
