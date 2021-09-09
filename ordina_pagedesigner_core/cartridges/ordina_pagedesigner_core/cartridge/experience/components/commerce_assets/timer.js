@@ -38,6 +38,7 @@ module.exports.render = function (context, modelIn) {
      * #7: Based off of #6, look at what we want to do via `timerCountdown`
      */
 
+    model.title= content.title ? content.title : null;
     model.currentTime = new Date(currentTime).toUTCString();
     model.campaignStart = new Date(campaignStart).toUTCString();
     model.campaignEnd = new Date(campaignEnd).toUTCString();

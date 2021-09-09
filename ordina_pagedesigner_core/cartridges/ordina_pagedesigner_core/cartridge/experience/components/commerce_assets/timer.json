@@ -18,6 +18,12 @@
           "required": false
         },
         {
+          "id": "title",
+          "name": "Timer Title",
+          "type": "markup",
+          "required": false
+        },
+        {
           "id": "timerColor",
           "name": "Color",
           "description": "CSS Hex Color for timer",

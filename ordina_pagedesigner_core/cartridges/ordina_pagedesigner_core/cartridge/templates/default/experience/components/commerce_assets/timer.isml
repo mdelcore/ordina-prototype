@@ -3,7 +3,9 @@
   assets.addJs('/js/components/timer.js');
 </isscript>
 
-<iscomment> TODO: Update `pdict` props too all have `campaign` prefix  </iscomment>
+<isprint value="${pdict.title ? pdict.title : ''}" encoding="off" />
+
+<iscomment> TODO: Update `pdict` props too all have `campaign` prefix </iscomment>
 <span
   class="campaign-countdown-timer"
   data-campaign-start="${pdict.campaignStart}"
