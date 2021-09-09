@@ -11,7 +11,7 @@
         {
           "id": "timerCountdown",
           "name": "Countdown",
-          "description": "Countdown modes (Start, End, Both",
+          "description": "Countdown modes (Start, End, Both)",
           "type": "enum",
           "values": ["Campaign Start", "Campaign End", "Both"],
           "default_value": "Both",
