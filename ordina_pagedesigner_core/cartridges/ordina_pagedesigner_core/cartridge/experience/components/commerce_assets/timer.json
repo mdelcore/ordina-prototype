@@ -11,10 +11,9 @@
         {
           "id": "timerCountdown",
           "name": "Countdown",
-          "description": "Countdown modes (Start, End, Both)",
+          "description": "Countdown modes (Start, End)",
           "type": "enum",
-          "values": ["Campaign Start", "Campaign End", "Both"],
-          "default_value": "Both",
+          "values": ["Campaign Start", "Campaign End"],
           "required": false
         },
         {
@@ -26,7 +25,7 @@
         {
           "id": "timerColor",
           "name": "Color",
-          "description": "CSS Hex Color for timer",
+          "description": "CSS color for timer (HEX, RGB, or Name)",
           "type": "string",
           "default_value": "#000000",
           "required": false
